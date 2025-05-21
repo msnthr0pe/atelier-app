@@ -40,6 +40,14 @@ android {
 }
 
 dependencies {
+    // Retrofit
+    implementation(libs.retrofit)
+    // Gson Converter
+    implementation(libs.converter.gson)
+    // OkHttp
+    implementation(libs.okhttp)
+    // OkHttp Logging Interceptor
+    implementation(libs.logging.interceptor)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
