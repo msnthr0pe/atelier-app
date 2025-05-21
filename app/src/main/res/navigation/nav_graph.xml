@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/titleFragment">
 
     <fragment
         android:id="@+id/titleFragment"
         android:name="com.example.atelierapp.TitleFragment"
-        android:label="Title" >
+        android:label="Title"
+        tools:layout="@layout/fragment_title">
         <action
             android:id="@+id/action_titleFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -16,9 +18,16 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.atelierapp.LoginFragment"
-        android:label="Login" />
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_requestsFragment"
+            app:destination="@id/requestsFragment" />
+    </fragment>
 
-
-
-
+    <fragment
+        android:id="@+id/requestsFragment"
+        android:name="com.example.atelierapp.RequestsFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_requests"/>
 </navigation>
