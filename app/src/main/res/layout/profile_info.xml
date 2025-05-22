@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/etNameNewUser"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
@@ -31,48 +31,48 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
-        android:id="@+id/editTextText5"
+        android:id="@+id/etSurnameNewUser"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Фамилия"
         android:inputType="text"
-        app:layout_constraintStart_toStartOf="@+id/editTextText3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        app:layout_constraintStart_toStartOf="@+id/etNameNewUser"
+        app:layout_constraintTop_toBottomOf="@+id/etNameNewUser" />
 
     <EditText
-        android:id="@+id/editTextText6"
+        android:id="@+id/etPhoneNewUser"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Ваш номер телефона"
         android:inputType="text"
-        app:layout_constraintStart_toStartOf="@+id/editTextText5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
+        app:layout_constraintStart_toStartOf="@+id/etSurnameNewUser"
+        app:layout_constraintTop_toBottomOf="@+id/etSurnameNewUser" />
 
     <EditText
-        android:id="@+id/editTextText7"
+        android:id="@+id/etEmailNewUser"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="text"
-        app:layout_constraintStart_toStartOf="@+id/editTextText6"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText6" />
+        app:layout_constraintStart_toStartOf="@+id/etPhoneNewUser"
+        app:layout_constraintTop_toBottomOf="@+id/etPhoneNewUser" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnContinueNewUser"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:text="Изменить пароль"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText7"
+        app:layout_constraintEnd_toEndOf="@+id/etEmailNewUser"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextText7"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText7" />
+        app:layout_constraintStart_toStartOf="@+id/etEmailNewUser"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailNewUser" />
 
     <Button
         android:id="@+id/button6"
@@ -81,10 +81,10 @@
         android:layout_marginTop="12dp"
         android:text="Выйти с учётной записи"
         android:backgroundTint="@color/dark_button"
-        app:layout_constraintEnd_toEndOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="@+id/btnContinueNewUser"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintStart_toStartOf="@+id/btnContinueNewUser"
+        app:layout_constraintTop_toBottomOf="@+id/btnContinueNewUser" />
 
     <include
         android:id="@+id/customBottomBar"

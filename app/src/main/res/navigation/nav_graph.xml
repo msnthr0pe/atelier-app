@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_loginFragment_to_requestsFragment"
             app:destination="@id/requestsFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_newUserFragment"
+            app:destination="@id/newUserFragment" />
     </fragment>
 
     <fragment
@@ -30,4 +33,14 @@
         android:name="com.example.atelierapp.RequestsFragment"
         android:label="Login"
         tools:layout="@layout/fragment_requests"/>
+
+    <fragment
+        android:id="@+id/newUserFragment"
+        android:name="com.example.atelierapp.NewUserFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_new_user">
+        <action
+            android:id="@+id/action_newUserFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

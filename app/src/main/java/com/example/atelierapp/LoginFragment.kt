@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.atelierapp.databinding.FragmentLoginBinding
@@ -24,6 +25,7 @@ class LoginFragment : Fragment() {
     lateinit var etEmail: EditText
     lateinit var etPassword: EditText
     lateinit var btnLogin: Button
+    lateinit var tvRegister: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +41,7 @@ class LoginFragment : Fragment() {
         etEmail = binding.etLoginEmail
         etPassword = binding.etLoginPassword
         btnLogin = binding.loginBtn
+        tvRegister = binding.tvRegister
         btnLogin.setOnClickListener {
             val login = etEmail.text.toString()
             val password = etPassword.text.toString()
@@ -49,11 +52,15 @@ class LoginFragment : Fragment() {
             }
         }
 
+        tvRegister.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_newUserFragment)
+        }
+
         return binding.root
     }
 
-    private fun loginUser(login: String, password: String) {
-        val call = ApiClient.authApi.login(AuthModels.LoginRequest(login, password))
+    private fun loginUser(email: String, password: String) {
+        val call = ApiClient.authApi.login(AuthModels.LoginRequest(email, password))
         call.enqueue(object : Callback<AuthModels.AuthResponse> {
             override fun onResponse(
                 call: Call<AuthModels.AuthResponse>,
