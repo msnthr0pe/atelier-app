@@ -14,6 +14,11 @@ class AuthModels {
         val phone: String
         )
 
+    data class ClientRequest(
+        val date: String,
+        val phone: String
+    )
+
     data class AuthResponse(
         val token: String
     )
