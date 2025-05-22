@@ -26,6 +26,7 @@
         android:layout_marginTop="20dp"
         android:hint="Email"
         android:text="testl"
+        android:inputType="textEmailAddress"
         android:textColorHint="@color/orange"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintHorizontal_bias="0.469"

@@ -87,7 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnContinueNewUser" />
 
     <include
-        android:id="@+id/customBottomBar"
+        android:id="@+id/customBottomBar3"
         layout="@layout/bottom_nav_bar3"
         android:layout_width="match_parent"
         android:layout_height="70dp"

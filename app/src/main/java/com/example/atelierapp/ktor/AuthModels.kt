@@ -1,5 +1,7 @@
 package com.example.atelierapp.ktor
 
+import kotlinx.serialization.Serializable
+
 class AuthModels {
     data class LoginRequest(
         val email: String,
@@ -16,7 +18,18 @@ class AuthModels {
 
     data class ClientRequest(
         val date: String,
-        val phone: String
+        val phone: String,
+        val name: String,
+        val email: String,
+        val time: String,
+        val description: String,
+    )
+
+    @Serializable
+    data class ClientByDTO(
+        val name: String,
+        val date: String,
+        val mode: String
     )
 
     data class AuthResponse(

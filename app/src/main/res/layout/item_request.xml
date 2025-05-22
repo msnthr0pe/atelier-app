@@ -13,18 +13,35 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="12dp">
-
-        <TextView
-            android:id="@+id/timeTextView"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="default time"
-            android:textColor="@color/text_or_button"
-            android:textSize="14sp"
-            android:textStyle="bold"/>
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/timeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="default time"
+                android:textColor="@color/text_or_button"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/dateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="default date"
+                android:textColor="@color/text_or_button"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingStart="10dp"/>
+
+        </LinearLayout>
+
+
 
         <TextView
-            android:id="@+id/recyclerClientName"
+            android:id="@+id/recyclerRequestName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"

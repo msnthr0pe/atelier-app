@@ -17,4 +17,7 @@ interface AuthApi {
 
     @GET("getclients")
     suspend fun getClients(): List<AuthModels.ClientRequest>
+
+    @POST("getclientby")
+    suspend fun getClientBy(@Body request: AuthModels.ClientByDTO): List<AuthModels.ClientRequest>
 }

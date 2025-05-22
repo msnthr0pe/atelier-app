@@ -53,22 +53,43 @@ class NewRequestFragment : Fragment() {
         btnCreateRequest.setOnClickListener {
             val phone = etPhoneRequest.text.toString()
             val date = etDateRequest.text.toString()
-            if (phone.isNotEmpty() && date.isNotEmpty()) {
-                addClient(date, phone)
+            val name = etNameRequest.text.toString()
+            val email = etEmailRequest.text.toString()
+            val time = etTimeRequest.text.toString()
+            val description = etDescriptionRequest.text.toString()
+            if (
+                phone.isNotEmpty() &&
+                date.isNotEmpty() &&
+                name.isNotEmpty() &&
+                email.isNotEmpty() &&
+                time.isNotEmpty() &&
+                description.isNotEmpty()
+                ) {
+                addClient(date, phone, name, email, time, description)
             } else {
                 Toast.makeText(activity, "Заполните все поля", Toast.LENGTH_SHORT).show()
             }
         }
-
         return binding.root
     }
 
     private fun addClient(
         date: String,
-        phone: String
+        phone: String,
+        name: String,
+        email: String,
+        time: String,
+        description: String,
     ) {
         val call = ApiClient.authApi.addClient(
-            AuthModels.ClientRequest(date = date, phone = phone)
+            AuthModels.ClientRequest(
+                date = date,
+                phone = phone,
+                name = name,
+                email = email,
+                time = time,
+                description = description
+                )
         )
         call.enqueue(object : Callback<AuthModels.AuthResponse> {
             override fun onResponse(

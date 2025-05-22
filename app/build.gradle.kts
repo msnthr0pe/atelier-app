@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("plugin.serialization") version "1.8.21" // вот этот плагин обязателен!
+
 }
 
 android {
@@ -48,6 +50,9 @@ dependencies {
     implementation(libs.okhttp)
     // OkHttp Logging Interceptor
     implementation(libs.logging.interceptor)
+
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

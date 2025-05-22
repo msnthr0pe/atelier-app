@@ -48,7 +48,7 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Ваш номер телефона"
-        android:inputType="text"
+        android:inputType="phone"
         app:layout_constraintStart_toStartOf="@+id/etSurnameNewUser"
         app:layout_constraintTop_toBottomOf="@+id/etSurnameNewUser" />
 
@@ -59,7 +59,7 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Email"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/etPhoneNewUser"
         app:layout_constraintTop_toBottomOf="@+id/etPhoneNewUser" />
 
@@ -80,7 +80,6 @@
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
-        android:gravity="left"
         android:hint="Повторите пароль"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="@+id/etPasswordNewUser"

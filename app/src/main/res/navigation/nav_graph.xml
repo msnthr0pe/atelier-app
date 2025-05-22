@@ -55,7 +55,11 @@
         android:id="@+id/clientsFragment"
         android:name="com.example.atelierapp.ClientsFragment"
         android:label="Login"
-        tools:layout="@layout/fragment_clients"/>
+        tools:layout="@layout/fragment_clients">
+        <action
+            android:id="@+id/action_clientsFragment_to_concreteClientFragment"
+            app:destination="@id/concreteClientFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/newRequestFragment"
@@ -65,5 +69,12 @@
         <action
             android:id="@+id/action_newRequestFragment_to_requestsFragment"
             app:destination="@id/requestsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/concreteClientFragment"
+        android:name="com.example.atelierapp.ConcreteClientFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_concrete_client">
     </fragment>
 </navigation>
