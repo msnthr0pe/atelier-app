@@ -32,4 +32,9 @@ class TitleFragment : Fragment() {
     companion object {
 
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

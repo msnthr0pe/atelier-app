@@ -74,10 +74,6 @@ class NewUserFragment : Fragment() {
                     Toast.makeText(activity, "Пароли не совпадают", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Log.d("MYTAG", name.isEmpty().toString() +
-                surname.isEmpty().toString() + phone.isEmpty().toString() +
-                email.isEmpty().toString() + password.isEmpty().toString() +
-                retypePassword.isEmpty().toString())
                 Toast.makeText(activity, "Заполните все поля", Toast.LENGTH_SHORT).show()
             }
         }
@@ -117,5 +113,10 @@ class NewUserFragment : Fragment() {
 
     companion object {
 
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
