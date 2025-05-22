@@ -61,5 +61,9 @@
         android:id="@+id/newRequestFragment"
         android:name="com.example.atelierapp.NewRequestFragment"
         android:label="Login"
-        tools:layout="@layout/fragment_new_request"/>
+        tools:layout="@layout/fragment_new_request">
+        <action
+            android:id="@+id/action_newRequestFragment_to_requestsFragment"
+            app:destination="@id/requestsFragment" />
+    </fragment>
 </navigation>

@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/clientsRecycler"
         android:layout_width="334dp"
         android:layout_height="420dp"
         android:layout_marginTop="48dp"
@@ -45,9 +45,8 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:text="Поиск по клиентской базе"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:background="@drawable/edittext_rounded_corners"
-        android:textColor="@color/gray"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -60,8 +59,8 @@
         android:layout_height="wrap_content"
         android:text="Заявки"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-        app:layout_constraintStart_toStartOf="@+id/recyclerView" />
+        app:layout_constraintBottom_toTopOf="@+id/clientsRecycler"
+        app:layout_constraintStart_toStartOf="@+id/clientsRecycler" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

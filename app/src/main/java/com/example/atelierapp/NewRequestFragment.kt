@@ -8,7 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.atelierapp.databinding.FragmentNewRequestBinding
+import com.example.atelierapp.ktor.ApiClient
+import com.example.atelierapp.ktor.AuthModels
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.Calendar
 
 class NewRequestFragment : Fragment() {
@@ -35,7 +42,51 @@ class NewRequestFragment : Fragment() {
     ): View {
         _binding = FragmentNewRequestBinding.inflate(layoutInflater, container, false)
 
+        etNameRequest = binding.etNameRequest
+        etDateRequest = binding.etDateRequest
+        etTimeRequest = binding.etTimeRequest
+        etPhoneRequest = binding.etPhoneRequest
+        etEmailRequest = binding.etEmailRequest
+        etDescriptionRequest = binding.etDescriptionRequest
+        btnCreateRequest = binding.btnContinueNewUser
+
+        btnCreateRequest.setOnClickListener {
+            val phone = etPhoneRequest.text.toString()
+            val date = etDateRequest.text.toString()
+            if (phone.isNotEmpty() && date.isNotEmpty()) {
+                addClient(date, phone)
+            } else {
+                Toast.makeText(activity, "Заполните все поля", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         return binding.root
+    }
+
+    private fun addClient(
+        date: String,
+        phone: String
+    ) {
+        val call = ApiClient.authApi.addClient(
+            AuthModels.ClientRequest(date = date, phone = phone)
+        )
+        call.enqueue(object : Callback<AuthModels.AuthResponse> {
+            override fun onResponse(
+                call: Call<AuthModels.AuthResponse>,
+                response: Response<AuthModels.AuthResponse>
+            ) {
+                if (response.isSuccessful) {
+                    Toast.makeText(requireContext(), "Запись добавлена", Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.action_newRequestFragment_to_requestsFragment)
+                } else {
+                    Toast.makeText(requireContext(), "Ошибка добавления записи", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<AuthModels.AuthResponse>, t: Throwable) {
+                Toast.makeText(requireContext(), "Ошибка сети: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
