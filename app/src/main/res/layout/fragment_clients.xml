@@ -7,14 +7,17 @@
     android:background="@color/light_yellow">
 
     <EditText
-        android:id="@+id/editTextText10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:id="@+id/etSearchClients"
+        android:layout_width="334dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="40dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:ems="10"
+        android:hint="Поиск по клиентской базе"
         android:inputType="text"
-        android:hint="Поиск по клиентам"
         android:textColorHint="@color/gray"
+        android:background="@drawable/edittext_rounded_corners"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,11 +26,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="334dp"
-        android:layout_height="625dp"
+        android:layout_height="600dp"
         android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText10"
-        app:layout_constraintStart_toStartOf="@+id/editTextText10"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText10"
+        app:layout_constraintEnd_toEndOf="@+id/etSearchClients"
+        app:layout_constraintStart_toStartOf="@+id/etSearchClients"
+        app:layout_constraintTop_toBottomOf="@+id/etSearchClients"
         tools:itemCount="9"
-        tools:listitem="@layout/item_client" />
+        tools:listitem="@layout/item_client"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

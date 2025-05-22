@@ -80,12 +80,12 @@ class LoginFragment : Fragment() {
         })
     }
 
+    companion object {
+
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    companion object {
-
     }
 }

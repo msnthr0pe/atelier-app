@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etNameNewUser"
+        android:id="@+id/etNameRequest"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
-        android:id="@+id/etSurnameNewUser"
+        android:id="@+id/etDateRequest"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
@@ -39,44 +39,44 @@
         android:hint="Дата"
         android:inputType="text"
         android:enabled="false"
-        app:layout_constraintStart_toStartOf="@+id/etNameNewUser"
-        app:layout_constraintTop_toBottomOf="@+id/etNameNewUser" />
+        app:layout_constraintStart_toStartOf="@+id/etNameRequest"
+        app:layout_constraintTop_toBottomOf="@+id/etNameRequest" />
 
     <EditText
-        android:id="@+id/etPhoneNewUser"
+        android:id="@+id/etTimeRequest"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Время"
         android:inputType="text"
-        app:layout_constraintStart_toStartOf="@+id/etSurnameNewUser"
-        app:layout_constraintTop_toBottomOf="@+id/etSurnameNewUser" />
+        app:layout_constraintStart_toStartOf="@+id/etDateRequest"
+        app:layout_constraintTop_toBottomOf="@+id/etDateRequest" />
 
     <EditText
-        android:id="@+id/etEmailNewUser"
+        android:id="@+id/etPhoneRequest"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Ваш номер телефона"
         android:inputType="text"
-        app:layout_constraintStart_toStartOf="@+id/etPhoneNewUser"
-        app:layout_constraintTop_toBottomOf="@+id/etPhoneNewUser" />
+        app:layout_constraintStart_toStartOf="@+id/etTimeRequest"
+        app:layout_constraintTop_toBottomOf="@+id/etTimeRequest" />
 
     <EditText
-        android:id="@+id/etPasswordNewUser"
+        android:id="@+id/etEmailRequest"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="text"
-        app:layout_constraintStart_toStartOf="@+id/etEmailNewUser"
-        app:layout_constraintTop_toBottomOf="@+id/etEmailNewUser" />
+        app:layout_constraintStart_toStartOf="@+id/etPhoneRequest"
+        app:layout_constraintTop_toBottomOf="@+id/etPhoneRequest" />
 
     <EditText
-        android:id="@+id/etRetypePasswordNewUser"
+        android:id="@+id/etDescriptionRequest"
         android:layout_width="334dp"
         android:layout_height="100dp"
         android:layout_marginTop="12dp"
@@ -84,17 +84,17 @@
         android:gravity="left"
         android:hint="Описание"
         android:inputType="text"
-        app:layout_constraintStart_toStartOf="@+id/etPasswordNewUser"
-        app:layout_constraintTop_toBottomOf="@+id/etPasswordNewUser" />
+        app:layout_constraintStart_toStartOf="@+id/etEmailRequest"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailRequest" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/ivCalendarRequest"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/etSurnameNewUser"
-        app:layout_constraintEnd_toEndOf="@+id/etSurnameNewUser"
-        app:layout_constraintTop_toTopOf="@+id/etSurnameNewUser"
+        app:layout_constraintBottom_toBottomOf="@+id/etDateRequest"
+        app:layout_constraintEnd_toEndOf="@+id/etDateRequest"
+        app:layout_constraintTop_toTopOf="@+id/etDateRequest"
         app:layout_constraintVertical_bias="0.466"
         app:srcCompat="@drawable/ic_calendar" />
 
@@ -104,6 +104,6 @@
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:text="Записать"
-        app:layout_constraintStart_toStartOf="@+id/etRetypePasswordNewUser"
-        app:layout_constraintTop_toBottomOf="@+id/etRetypePasswordNewUser" />
+        app:layout_constraintStart_toStartOf="@+id/etDescriptionRequest"
+        app:layout_constraintTop_toBottomOf="@+id/etDescriptionRequest" />
 </androidx.constraintlayout.widget.ConstraintLayout>

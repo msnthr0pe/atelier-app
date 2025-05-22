@@ -19,13 +19,13 @@
         android:layout_width="334dp"
         android:layout_height="420dp"
         android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="@+id/editTextText2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2"
+        app:layout_constraintStart_toStartOf="@+id/tvSearchClientsRequests"
+        app:layout_constraintTop_toBottomOf="@+id/tvSearchClientsRequests"
         tools:itemCount="4"
         tools:listitem="@layout/item_request" />
 
     <ImageButton
-        android:id="@+id/fab_button"
+        android:id="@+id/btnAdd"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginEnd="36dp"
@@ -38,15 +38,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="#FFFFFF" />
 
-    <EditText
-        android:id="@+id/editTextText2"
+    <TextView
+        android:id="@+id/tvSearchClientsRequests"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:hint="Поиск по клиентской базе"
-        android:inputType="text"
-        android:textColorHint="@color/gray"
+        android:text="Поиск по клиентской базе"
+        android:gravity="center_vertical"
+        android:background="@drawable/edittext_rounded_corners"
+        android:textColor="@color/gray"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
