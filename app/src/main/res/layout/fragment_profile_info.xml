@@ -20,71 +20,75 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etNameNewUser"
+        android:id="@+id/etNameUser"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Имя"
+        android:enabled="false"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
-        android:id="@+id/etSurnameNewUser"
+        android:id="@+id/etSurnameUser"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Фамилия"
+        android:enabled="false"
         android:inputType="text"
-        app:layout_constraintStart_toStartOf="@+id/etNameNewUser"
-        app:layout_constraintTop_toBottomOf="@+id/etNameNewUser" />
+        app:layout_constraintStart_toStartOf="@+id/etNameUser"
+        app:layout_constraintTop_toBottomOf="@+id/etNameUser" />
 
     <EditText
-        android:id="@+id/etPhoneNewUser"
+        android:id="@+id/etPhoneUser"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Ваш номер телефона"
-        android:inputType="text"
-        app:layout_constraintStart_toStartOf="@+id/etSurnameNewUser"
-        app:layout_constraintTop_toBottomOf="@+id/etSurnameNewUser" />
+        android:enabled="false"
+        android:inputType="phone"
+        app:layout_constraintStart_toStartOf="@+id/etSurnameUser"
+        app:layout_constraintTop_toBottomOf="@+id/etSurnameUser" />
 
     <EditText
-        android:id="@+id/etEmailNewUser"
+        android:id="@+id/etEmailUser"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Email"
-        android:inputType="text"
-        app:layout_constraintStart_toStartOf="@+id/etPhoneNewUser"
-        app:layout_constraintTop_toBottomOf="@+id/etPhoneNewUser" />
+        android:enabled="false"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/etPhoneUser"
+        app:layout_constraintTop_toBottomOf="@+id/etPhoneUser" />
 
     <Button
-        android:id="@+id/btnContinueNewUser"
+        android:id="@+id/btnChangePassword"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:text="Изменить пароль"
-        app:layout_constraintEnd_toEndOf="@+id/etEmailNewUser"
+        app:layout_constraintEnd_toEndOf="@+id/etEmailUser"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/etEmailNewUser"
-        app:layout_constraintTop_toBottomOf="@+id/etEmailNewUser" />
+        app:layout_constraintStart_toStartOf="@+id/etEmailUser"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailUser" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btnLogOut"
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:text="Выйти с учётной записи"
         android:backgroundTint="@color/dark_button"
-        app:layout_constraintEnd_toEndOf="@+id/btnContinueNewUser"
+        app:layout_constraintEnd_toEndOf="@+id/btnChangePassword"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/btnContinueNewUser"
-        app:layout_constraintTop_toBottomOf="@+id/btnContinueNewUser" />
+        app:layout_constraintStart_toStartOf="@+id/btnChangePassword"
+        app:layout_constraintTop_toBottomOf="@+id/btnChangePassword" />
 
     <include
         android:id="@+id/customBottomBar3"

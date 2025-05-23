@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/requestsRecycler"
+        android:id="@+id/calendarRecycler"
         android:layout_width="344dp"
         android:layout_height="268dp"
         android:layout_marginTop="12dp"
@@ -30,7 +30,7 @@
         tools:listitem="@layout/item_request" />
 
     <include
-        android:id="@+id/customBottomBar"
+        android:id="@+id/customBottomBar2"
         layout="@layout/bottom_nav_bar2"
         android:layout_width="match_parent"
         android:layout_height="70dp"

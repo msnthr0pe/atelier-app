@@ -1,6 +1,8 @@
 package com.example.atelierapp
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +18,15 @@ import com.example.atelierapp.ktor.AuthModels
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import androidx.core.content.edit
+import androidx.lifecycle.lifecycleScope
+import com.example.atelierapp.recycler.RequestAdapter
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+@kotlinx.serialization.Serializable
+data class EmailDTO(val email: String)
 
 class LoginFragment : Fragment() {
 
@@ -68,6 +79,29 @@ class LoginFragment : Fragment() {
             ) {
                 if (response.isSuccessful) {
                     Toast.makeText(requireContext(), "Успешный вход", Toast.LENGTH_SHORT).show()
+
+                    var userDTO: AuthModels.RegisterRequest
+
+                    lifecycleScope.launch {
+                        try {
+                            userDTO = withContext(Dispatchers.IO) {
+                                ApiClient.authApi.getUser(EmailDTO(etEmail.text.toString()))
+                            }
+                            val prefs = requireContext().getSharedPreferences("credentials", Context.MODE_PRIVATE)
+                            prefs.edit {
+                                putString("email", userDTO.email)
+                                putString("name", userDTO.name)
+                                putString("surname", userDTO.surname)
+                                putString("phone", userDTO.phone)
+                                putString("password", userDTO.password)
+                            }
+                            Log.e("MYCLIENT", userDTO.toString())
+                        } catch (e: Exception) {
+                            Log.e("MYCLIENT", "Ошибка: ${e.message}")
+                        }
+                    }
+
+
                     findNavController().navigate(R.id.action_loginFragment_to_requestsFragment)
                 } else {
                     Toast.makeText(requireContext(), "Ошибка входа", Toast.LENGTH_SHORT).show()

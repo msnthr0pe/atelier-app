@@ -71,6 +71,13 @@ class RequestsFragment : Fragment() {
             findNavController().navigate(R.id.action_requestsFragment_to_newRequestFragment)
         }
 
+        binding.customBottomBar.iconCalendar.setOnClickListener {
+            findNavController().navigate(R.id.action_requestsFragment_to_calendarRequestsFragment)
+        }
+        binding.customBottomBar.iconProfile.setOnClickListener {
+            findNavController().navigate(R.id.action_requestsFragment_to_profileInfoFragment)
+        }
+
         return binding.root
     }
 

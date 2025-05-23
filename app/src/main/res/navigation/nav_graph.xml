@@ -39,6 +39,12 @@
         <action
             android:id="@+id/action_requestsFragment_to_newRequestFragment"
             app:destination="@id/newRequestFragment" />
+        <action
+            android:id="@+id/action_requestsFragment_to_calendarRequestsFragment"
+            app:destination="@id/calendarRequestsFragment" />
+        <action
+            android:id="@+id/action_requestsFragment_to_profileInfoFragment"
+            app:destination="@id/profileInfoFragment" />
     </fragment>
 
     <fragment
@@ -76,5 +82,47 @@
         android:name="com.example.atelierapp.ConcreteClientFragment"
         android:label="Login"
         tools:layout="@layout/fragment_concrete_client">
+    </fragment>
+
+    <fragment
+        android:id="@+id/calendarRequestsFragment"
+        android:name="com.example.atelierapp.CalendarRequestsFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_calendar_requests">
+        <action
+            android:id="@+id/action_calendarRequestsFragment_to_profileInfoFragment"
+            app:destination="@id/profileInfoFragment" />
+        <action
+            android:id="@+id/action_calendarRequestsFragment_to_requestsFragment"
+            app:destination="@id/requestsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileInfoFragment"
+        android:name="com.example.atelierapp.ProfileInfoFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_profile_info">
+        <action
+            android:id="@+id/action_profileInfoFragment_to_calendarRequestsFragment"
+            app:destination="@id/calendarRequestsFragment" />
+        <action
+            android:id="@+id/action_profileInfoFragment_to_requestsFragment"
+            app:destination="@id/requestsFragment" />
+        <action
+            android:id="@+id/action_profileInfoFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+        <action
+            android:id="@+id/action_profileInfoFragment_to_passwordChangeFragment"
+            app:destination="@id/passwordChangeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/passwordChangeFragment"
+        android:name="com.example.atelierapp.PasswordChangeFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_password_change">
+        <action
+            android:id="@+id/action_passwordChangeFragment_to_profileInfoFragment"
+            app:destination="@id/profileInfoFragment" />
     </fragment>
 </navigation>
