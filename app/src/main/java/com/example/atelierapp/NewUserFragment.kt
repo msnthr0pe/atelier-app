@@ -1,18 +1,16 @@
 package com.example.atelierapp
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.atelierapp.databinding.FragmentNewUserBinding
-import com.example.atelierapp.databinding.FragmentTitleBinding
 import com.example.atelierapp.ktor.ApiClient
 import com.example.atelierapp.ktor.AuthModels
 import retrofit2.Call
@@ -31,6 +29,8 @@ class NewUserFragment : Fragment() {
     lateinit var etPassword: EditText
     lateinit var etRetypePassword: EditText
     lateinit var btnContinue: Button
+    lateinit var cbIsAdministrator: CheckBox
+    lateinit var userStatus: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,6 +51,16 @@ class NewUserFragment : Fragment() {
         etPassword = binding.etPasswordNewUser
         etRetypePassword = binding.etRetypePasswordNewUser
         btnContinue = binding.btnContinueNewUser
+        cbIsAdministrator = binding.checkBox
+        userStatus = "manager"
+
+        cbIsAdministrator.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                userStatus = "admin"
+            } else {
+                userStatus = "manager"
+            }
+        }
 
         btnContinue.setOnClickListener {
             val name = etName.text.toString()
@@ -90,7 +100,7 @@ class NewUserFragment : Fragment() {
         password: String
         ) {
         val call = ApiClient.authApi.register(AuthModels.RegisterRequest(
-            email, password, name, surname, phone)
+            email, password, name, surname, phone, userStatus)
         )
         call.enqueue(object : Callback<AuthModels.AuthResponse> {
             override fun onResponse(

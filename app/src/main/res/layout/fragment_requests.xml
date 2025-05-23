@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/clientsRecycler"
+        android:id="@+id/allRequestsRecycler"
         android:layout_width="334dp"
         android:layout_height="420dp"
         android:layout_marginTop="48dp"
@@ -59,8 +59,8 @@
         android:layout_height="wrap_content"
         android:text="Заявки"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/clientsRecycler"
-        app:layout_constraintStart_toStartOf="@+id/clientsRecycler" />
+        app:layout_constraintBottom_toTopOf="@+id/allRequestsRecycler"
+        app:layout_constraintStart_toStartOf="@+id/allRequestsRecycler" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

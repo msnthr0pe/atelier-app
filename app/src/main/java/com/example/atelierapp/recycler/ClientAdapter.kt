@@ -8,11 +8,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.atelierapp.R
 import com.example.atelierapp.ktor.AuthModels
 
-class ClientAdapter(private val clients: List<AuthModels.ClientRequest>) :
+class ClientAdapter(private val clients: List<AuthModels.ClientRequest>,
+                    private val onItemClick: (AuthModels.ClientRequest) -> Unit) :
     RecyclerView.Adapter<ClientAdapter.ClientViewHolder>() {
 
-    class ClientViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ClientViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val phoneText: TextView = itemView.findViewById(R.id.recyclerClientName)
+
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    onItemClick(clients[position])
+                }
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientViewHolder {

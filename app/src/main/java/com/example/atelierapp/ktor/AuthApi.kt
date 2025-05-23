@@ -1,5 +1,7 @@
 package com.example.atelierapp.ktor
 
+import com.example.atelierapp.EmailDTO
+import com.example.atelierapp.PasswordDTO
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -17,4 +19,13 @@ interface AuthApi {
 
     @GET("getclients")
     suspend fun getClients(): List<AuthModels.ClientRequest>
+
+    @POST("getclientby")
+    suspend fun getClientBy(@Body request: AuthModels.ClientByDTO): List<AuthModels.ClientRequest>
+
+    @POST("getuser")
+    suspend fun getUser(@Body email: EmailDTO): AuthModels.RegisterRequest
+
+    @POST("updateuser")
+    suspend fun updateUserPassword(@Body request: PasswordDTO): AuthModels.AuthResponse
 }

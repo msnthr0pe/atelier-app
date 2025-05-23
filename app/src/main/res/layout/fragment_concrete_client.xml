@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_yellow">
+
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Заявки"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvEmailConcrete"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailConcrete" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/concreteRecycler"
+        android:layout_width="334dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView15"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_request" />
+
+    <TextView
+        android:id="@+id/tvNameConcrete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="144dp"
+        android:text="Имя"
+        android:textColor="@color/text_or_button"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPhoneConcrete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:enabled="false"
+        android:text="88005553535"
+        android:textColor="@color/orange"
+        app:layout_constraintStart_toStartOf="@+id/tvNameConcrete"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameConcrete" />
+
+    <TextView
+        android:id="@+id/tvEmailConcrete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:enabled="false"
+        android:textColor="@color/orange"
+        android:text="email@email.com"
+        app:layout_constraintStart_toStartOf="@+id/tvPhoneConcrete"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhoneConcrete" />
+</androidx.constraintlayout.widget.ConstraintLayout>

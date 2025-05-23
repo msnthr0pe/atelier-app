@@ -49,7 +49,7 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Время"
-        android:inputType="text"
+        android:inputType="time"
         app:layout_constraintStart_toStartOf="@+id/etDateRequest"
         app:layout_constraintTop_toBottomOf="@+id/etDateRequest" />
 
@@ -59,8 +59,8 @@
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
-        android:hint="Ваш номер телефона"
-        android:inputType="text"
+        android:hint="Номер телефона клиента"
+        android:inputType="phone"
         app:layout_constraintStart_toStartOf="@+id/etTimeRequest"
         app:layout_constraintTop_toBottomOf="@+id/etTimeRequest" />
 
@@ -71,7 +71,7 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Email"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/etPhoneRequest"
         app:layout_constraintTop_toBottomOf="@+id/etPhoneRequest" />
 

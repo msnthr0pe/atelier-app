@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/light_yellow">
 
     <TextView
@@ -48,7 +48,7 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Ваш номер телефона"
-        android:inputType="text"
+        android:inputType="phone"
         app:layout_constraintStart_toStartOf="@+id/etSurnameNewUser"
         app:layout_constraintTop_toBottomOf="@+id/etSurnameNewUser" />
 
@@ -59,7 +59,7 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Email"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/etPhoneNewUser"
         app:layout_constraintTop_toBottomOf="@+id/etPhoneNewUser" />
 
@@ -80,7 +80,6 @@
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
-        android:gravity="left"
         android:hint="Повторите пароль"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="@+id/etPasswordNewUser"
@@ -90,8 +89,29 @@
         android:id="@+id/btnContinueNewUser"
         android:layout_width="334dp"
         android:layout_height="55dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="72dp"
         android:text="Продолжить"
+        app:layout_constraintEnd_toEndOf="@+id/etRetypePasswordNewUser"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/etRetypePasswordNewUser"
+        app:layout_constraintTop_toBottomOf="@+id/etRetypePasswordNewUser" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvIsAdministrator"
+        app:layout_constraintEnd_toStartOf="@+id/tvIsAdministrator"
+        app:layout_constraintTop_toTopOf="@+id/tvIsAdministrator" />
+
+    <TextView
+        android:id="@+id/tvIsAdministrator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
+        android:text="Администратор"
+        android:textColor="@color/orange"
         app:layout_constraintStart_toStartOf="@+id/etRetypePasswordNewUser"
         app:layout_constraintTop_toBottomOf="@+id/etRetypePasswordNewUser" />
 
