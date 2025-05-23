@@ -78,31 +78,39 @@ class LoginFragment : Fragment() {
                 response: Response<AuthModels.AuthResponse>
             ) {
                 if (response.isSuccessful) {
-                    Toast.makeText(requireContext(), "Успешный вход", Toast.LENGTH_SHORT).show()
 
-                    var userDTO: AuthModels.RegisterRequest
+                    var userDTO = AuthModels.RegisterRequest("-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-")
 
                     lifecycleScope.launch {
                         try {
                             userDTO = withContext(Dispatchers.IO) {
                                 ApiClient.authApi.getUser(EmailDTO(etEmail.text.toString()))
                             }
+
                             val prefs = requireContext().getSharedPreferences("credentials", Context.MODE_PRIVATE)
+
                             prefs.edit {
-                                putString("email", userDTO.email)
-                                putString("name", userDTO.name)
-                                putString("surname", userDTO.surname)
-                                putString("phone", userDTO.phone)
-                                putString("password", userDTO.password)
+                                putString("email", userDTO.email).commit()
+                                putString("name", userDTO.name).commit()
+                                putString("surname", userDTO.surname).commit()
+                                putString("phone", userDTO.phone).commit()
+                                putString("password", userDTO.password).commit()
+                                putString("status", userDTO.status).commit()
                             }
-                            Log.e("MYCLIENT", userDTO.toString())
+                            val status = prefs.getString("status", "--")
+
+                            Log.e("PREFS", status!!)
+
+                            findNavController().navigate(R.id.action_loginFragment_to_requestsFragment)
                         } catch (e: Exception) {
                             Log.e("MYCLIENT", "Ошибка: ${e.message}")
                         }
                     }
-
-
-                    findNavController().navigate(R.id.action_loginFragment_to_requestsFragment)
                 } else {
                     Toast.makeText(requireContext(), "Ошибка входа", Toast.LENGTH_SHORT).show()
                 }

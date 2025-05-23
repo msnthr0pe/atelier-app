@@ -25,8 +25,8 @@
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
-        android:hint="Имя"
         android:enabled="false"
+        android:hint="Имя"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -37,8 +37,8 @@
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
-        android:hint="Фамилия"
         android:enabled="false"
+        android:hint="Фамилия"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="@+id/etNameUser"
         app:layout_constraintTop_toBottomOf="@+id/etNameUser" />
@@ -49,8 +49,8 @@
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
-        android:hint="Ваш номер телефона"
         android:enabled="false"
+        android:hint="Ваш номер телефона"
         android:inputType="phone"
         app:layout_constraintStart_toStartOf="@+id/etSurnameUser"
         app:layout_constraintTop_toBottomOf="@+id/etSurnameUser" />
@@ -61,8 +61,8 @@
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:ems="10"
-        android:hint="Email"
         android:enabled="false"
+        android:hint="Email"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/etPhoneUser"
         app:layout_constraintTop_toBottomOf="@+id/etPhoneUser" />
@@ -71,10 +71,10 @@
         android:id="@+id/btnChangePassword"
         android:layout_width="334dp"
         android:layout_height="55dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="56dp"
         android:text="Изменить пароль"
         app:layout_constraintEnd_toEndOf="@+id/etEmailUser"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etEmailUser"
         app:layout_constraintTop_toBottomOf="@+id/etEmailUser" />
 
@@ -83,8 +83,8 @@
         android:layout_width="334dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
-        android:text="Выйти с учётной записи"
         android:backgroundTint="@color/dark_button"
+        android:text="Выйти с учётной записи"
         app:layout_constraintEnd_toEndOf="@+id/btnChangePassword"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/btnChangePassword"
@@ -97,5 +97,25 @@
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/role"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="Роль:"
+        app:layout_constraintStart_toStartOf="@+id/etEmailUser"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailUser" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="status"
+        app:layout_constraintBottom_toBottomOf="@+id/role"
+        app:layout_constraintStart_toEndOf="@+id/role"
+        app:layout_constraintTop_toTopOf="@+id/role"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.atelierapp.databinding.FragmentProfileInfoBinding
@@ -27,6 +28,7 @@ class ProfileInfoFragment : Fragment() {
     private lateinit var etEmail: EditText
     private lateinit var btnChangePassword: Button
     private lateinit var btnLogOut: Button
+    private lateinit var tvStatus: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,18 +48,20 @@ class ProfileInfoFragment : Fragment() {
         etEmail = binding.etEmailUser
         btnChangePassword = binding.btnChangePassword
         btnLogOut = binding.btnLogOut
+        tvStatus = binding.tvStatus
 
         val prefs = requireContext().getSharedPreferences("credentials", Context.MODE_PRIVATE)
         val prefName = prefs.getString("name", "--")
         val prefSurname = prefs.getString("surname", "--")
         val prefPhone = prefs.getString("phone", "--")
         val prefEmail = prefs.getString("email", "--")
-        val prefPassword = prefs.getString("password", "--")
+        val prefStatus = prefs.getString("status", "--")
 
         etName.setText(prefName)
         etSurname.setText(prefSurname)
         etPhone.setText(prefPhone)
         etEmail.setText(prefEmail)
+        tvStatus.text = prefStatus
 
         btnLogOut.setOnClickListener {
             findNavController().navigate(R.id.action_profileInfoFragment_to_titleFragment)

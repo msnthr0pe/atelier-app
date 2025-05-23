@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -70,6 +71,14 @@ class RequestsFragment : Fragment() {
         btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_requestsFragment_to_newRequestFragment)
         }
+
+        val prefs = requireContext().getSharedPreferences("credentials", Context.MODE_PRIVATE)
+        val prefStatus = prefs.getString("status", "--")
+        Log.d("PREFS", prefStatus!!)
+        if (prefStatus == "manager") {
+            btnAdd.visibility = View.GONE
+        }
+
 
         binding.customBottomBar.iconCalendar.setOnClickListener {
             findNavController().navigate(R.id.action_requestsFragment_to_calendarRequestsFragment)
