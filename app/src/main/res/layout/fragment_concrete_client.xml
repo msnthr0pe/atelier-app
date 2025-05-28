@@ -3,9 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/light_yellow">
-
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView15"
@@ -37,7 +35,6 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="144dp"
         android:text="Имя"
-        android:textColor="@color/text_or_button"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

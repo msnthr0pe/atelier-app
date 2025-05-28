@@ -12,10 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="12dp">
+        android:padding="12dp"
+        android:background="?attr/cardBackground">
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="?attr/cardBackground">
 
             <TextView
                 android:id="@+id/timeTextView"
@@ -24,6 +26,7 @@
                 android:text="default time"
                 android:textColor="@color/text_or_button"
                 android:textSize="14sp"
+                android:background="?attr/cardBackground"
                 android:textStyle="bold"/>
 
             <TextView
@@ -34,11 +37,10 @@
                 android:textColor="@color/text_or_button"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                android:background="?attr/cardBackground"
                 android:paddingStart="10dp"/>
 
         </LinearLayout>
-
-
 
         <TextView
             android:id="@+id/recyclerRequestName"
@@ -46,6 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="default title"
+            android:background="?attr/cardBackground"
             android:textSize="16sp"
             android:textStyle="bold"/>
 
@@ -54,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="default description"
+            android:background="?attr/cardBackground"
             android:layout_marginTop="2dp"
             android:textSize="13sp"
             android:textColor="@color/text_or_button"/>
