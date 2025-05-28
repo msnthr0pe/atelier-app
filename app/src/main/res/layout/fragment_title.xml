@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/light_yellow">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/logo"
@@ -48,14 +46,31 @@
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/isNightTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:checked="false"
+        android:text="Тёмная тема"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/text_or_button"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:thumbTint="@color/dark_button"
+        app:trackTint="@color/text_or_button"/>
+
     <Button
         android:id="@+id/btnNext"
         android:layout_width="334dp"
         android:layout_height="57dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="68dp"
         android:text="Вперёд"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 

@@ -54,7 +54,6 @@ class ClientsFragment : Fragment() {
                     ApiClient.authApi.getClients()
                 }
 
-                // Удаление дубликатов по phone:
                 val uniqueClients = clients.distinctBy { it.phone }
 
                 clientAdapter = ClientAdapter(uniqueClients) {client ->

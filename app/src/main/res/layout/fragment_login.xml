@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/light_yellow">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView4"
@@ -12,7 +11,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
         android:text="Добро\nпожаловать"
-        android:textColor="@color/text_or_button"
         android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,6 +23,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
         android:hint="Email"
+        android:text="admin"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/orange"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
@@ -38,6 +37,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="16dp"
         android:hint="Пароль"
+        android:text="admin"
         android:inputType="textPassword"
         android:textColorHint="@color/orange"
         app:layout_constraintEnd_toEndOf="@+id/etLoginEmail"
@@ -57,23 +57,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Забыли пароль?"
-        android:visibility="invisible"
-        android:textColor="@color/text_or_button"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/etLoginPassword"
-        app:layout_constraintTop_toBottomOf="@+id/etLoginPassword" />
-
-    <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Нет аккаунта?"
-        android:textColor="@color/text_or_button"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/loginBtn"

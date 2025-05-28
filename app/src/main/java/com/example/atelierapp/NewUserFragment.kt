@@ -88,7 +88,6 @@ class NewUserFragment : Fragment() {
             }
         }
 
-
         return binding.root
     }
 
