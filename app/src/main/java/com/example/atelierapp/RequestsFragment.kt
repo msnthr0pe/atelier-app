@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,9 +20,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.atelierapp.databinding.FragmentRequestsBinding
 import com.example.atelierapp.databinding.FragmentTitleBinding
 import com.example.atelierapp.ktor.ApiClient
+import com.example.atelierapp.ktor.AuthModels
 import com.example.atelierapp.recycler.ClientAdapter
 import com.example.atelierapp.recycler.RequestAdapter
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.debounce
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -35,6 +42,11 @@ class RequestsFragment : Fragment() {
 
     private lateinit var tvSearchClients: TextView
     private lateinit var btnAdd: ImageButton
+
+    private lateinit var searchEditText: EditText
+    private val searchQuery = MutableStateFlow("")
+
+    private var originalClients: List<AuthModels.ClientRequest> = emptyList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,12 +66,30 @@ class RequestsFragment : Fragment() {
                 val clients = withContext(Dispatchers.IO) {
                     ApiClient.authApi.getClients()
                 }
+
+                originalClients = clients
                 requestAdapter = RequestAdapter(clients)
                 recyclerView.adapter = requestAdapter
 
             } catch (e: Exception) {
                 Log.e("CLIENT", "Ошибка: ${e.message}")
             }
+        }
+
+        searchEditText = binding.etSearchRequests
+
+        searchEditText.addTextChangedListener {
+            searchQuery.value = it.toString()
+        }
+
+        lifecycleScope.launch {
+            searchQuery
+                .debounce(300)
+                .distinctUntilChanged()
+                .flowOn(Dispatchers.Default)
+                .collectLatest { query ->
+                    filterCards(query)
+                }
         }
 
         tvSearchClients = binding.tvSearchClientsRequests
@@ -88,6 +118,19 @@ class RequestsFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    private fun filterCards(query: String) {
+        val filtered = if (query.isEmpty()) {
+            originalClients
+        } else {
+            originalClients.filter { it.name.contains(query, ignoreCase = true) }
+        }
+        try {
+            requestAdapter.updateList(filtered)
+        } catch(_: Exception) {
+            Log.e("VETUSLUGI", "Exception occurred")
+        }
     }
 
     companion object {

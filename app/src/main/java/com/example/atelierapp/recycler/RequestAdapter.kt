@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.atelierapp.R
 import com.example.atelierapp.ktor.AuthModels
 
-class RequestAdapter(private val clients: List<AuthModels.ClientRequest>) :
+class RequestAdapter(private var clients: List<AuthModels.ClientRequest>) :
     RecyclerView.Adapter<RequestAdapter.RequestViewHolder>() {
 
     inner class RequestViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -33,5 +33,10 @@ class RequestAdapter(private val clients: List<AuthModels.ClientRequest>) :
     }
 
     override fun getItemCount(): Int = clients.size
+
+    fun updateList(newList: List<AuthModels.ClientRequest>) {
+        clients = newList
+        notifyDataSetChanged()
+    }
 
 }

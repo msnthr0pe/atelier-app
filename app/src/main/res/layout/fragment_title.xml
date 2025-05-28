@@ -8,7 +8,7 @@
         android:id="@+id/logo"
         android:layout_width="184dp"
         android:layout_height="184dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="124dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

@@ -8,12 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.atelierapp.R
 import com.example.atelierapp.ktor.AuthModels
 
-class ClientAdapter(private val clients: List<AuthModels.ClientRequest>,
+class ClientAdapter(private var clients: List<AuthModels.ClientRequest>,
                     private val onItemClick: (AuthModels.ClientRequest) -> Unit) :
     RecyclerView.Adapter<ClientAdapter.ClientViewHolder>() {
 
     inner class ClientViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val phoneText: TextView = itemView.findViewById(R.id.recyclerClientName)
+        val nameText: TextView = itemView.findViewById(R.id.recyclerClientName)
 
         init {
             itemView.setOnClickListener {
@@ -33,9 +33,14 @@ class ClientAdapter(private val clients: List<AuthModels.ClientRequest>,
 
     override fun onBindViewHolder(holder: ClientViewHolder, position: Int) {
         val client = clients[position]
-        holder.phoneText.text = client.phone
+        holder.nameText.text = client.name
     }
 
     override fun getItemCount(): Int = clients.size
+
+    fun updateList(newList: List<AuthModels.ClientRequest>) {
+        clients = newList
+        notifyDataSetChanged()
+    }
 
 }
