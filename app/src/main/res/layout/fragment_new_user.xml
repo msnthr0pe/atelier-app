@@ -24,6 +24,7 @@
         android:ems="10"
         android:hint="Имя"
         android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/textView11"
         app:layout_constraintStart_toStartOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
