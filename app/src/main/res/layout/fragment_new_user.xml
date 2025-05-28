@@ -11,7 +11,6 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="44dp"
         android:text="Создать учётную\nзапись"
-        android:textColor="@color/text_or_button"
         android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

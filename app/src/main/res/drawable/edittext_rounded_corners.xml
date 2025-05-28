@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Нажат и в фокусе -->
     <item android:state_pressed="true" android:state_focused="true">
         <shape>
-            <solid android:color="#FFF3E0"/> <!-- нежный оранжевый -->
+            <solid android:color="?attr/colorPrimary"/>
             <corners android:radius="15dp" />
             <padding
                 android:left="12dp"
@@ -14,10 +13,9 @@
         </shape>
     </item>
 
-    <!-- В фокусе, не нажат -->
     <item android:state_focused="true">
         <shape>
-            <solid android:color="#FFF3E0"/>
+            <solid android:color="?attr/colorPrimary"/>
             <corners android:radius="15dp" />
             <padding
                 android:left="12dp"
@@ -27,10 +25,9 @@
         </shape>
     </item>
 
-    <!-- Не в фокусе -->
     <item>
         <shape>
-            <solid android:color="#FFF8F0"/> <!-- светлее, когда не в фокусе -->
+            <solid android:color="?attr/colorPrimary"/>
             <corners android:radius="15dp" />
             <padding
                 android:left="12dp"

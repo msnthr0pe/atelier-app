@@ -3,6 +3,9 @@
         <item name="materialButtonStyle">@style/Widget.AtelierApp.Button</item>
         <item name="android:textViewStyle">@style/TextView</item>
         <item name="editTextStyle">@style/EditText</item>
+
+        <item name="android:background">@color/dark_yellow</item>
+        <item name="colorPrimary">@color/light_orange</item>
     </style>
 
     <style name="Widget.AtelierApp.Button" parent="Widget.Material3.Button">
@@ -13,7 +16,7 @@
     </style>
 
     <style name="TextView" parent="android:Widget.TextView">
-        <item name="android:textColor">@color/text_or_button</item>
+        <item name="android:textColor">@color/light_yellow</item>
         <item name="android:fontFamily">@font/nunito_sans</item>
         <item name="android:textSize">20sp</item>
     </style>
@@ -23,6 +26,6 @@
         <item name="android:fontFamily">@font/nunito_sans</item>
         <item name="android:textColorHint">@color/orange</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:background">"@drawable/edittext_rounded_corners"</item>
+        <item name="android:background">@drawable/edittext_rounded_corners</item>
     </style>
 </resources>

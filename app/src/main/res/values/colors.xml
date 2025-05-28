@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- background and text -->
     <color name="light_yellow">#FEFAE0</color>
     <color name="text_or_button">#606C38</color>
     <color name="dark_button">#283618</color>
     <color name="orange">#BC6C25</color>
+    <color name="light_orange">#FFEDCF</color>
     <color name="white">#FFFFFF</color>
     <color name="gray">#B4B4B4</color>
     <color name="on_surface">#000000</color>
+
+    <color name="dark_yellow">#262600</color>
+
 </resources>

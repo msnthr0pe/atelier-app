@@ -45,8 +45,8 @@
         android:ems="10"
         android:text="Поиск по клиентской базе"
         android:gravity="center"
+        android:textColor="@color/text_or_button"
         android:background="@drawable/edittext_rounded_corners"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"

@@ -13,31 +13,31 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="12dp"
-        android:background="?attr/cardBackground">
+        android:background="@drawable/edittext_rounded_corners">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="?attr/cardBackground">
+            android:background="@android:color/transparent">
 
             <TextView
                 android:id="@+id/timeTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="default time"
+                android:background="@android:color/transparent"
                 android:textColor="@color/text_or_button"
                 android:textSize="14sp"
-                android:background="?attr/cardBackground"
                 android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/dateTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
                 android:text="default date"
                 android:textColor="@color/text_or_button"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:background="?attr/cardBackground"
                 android:paddingStart="10dp"/>
 
         </LinearLayout>
@@ -46,9 +46,10 @@
             android:id="@+id/recyclerRequestName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:layout_marginTop="4dp"
             android:text="default title"
-            android:background="?attr/cardBackground"
+            android:textColor="@color/text_or_button"
             android:textSize="16sp"
             android:textStyle="bold"/>
 
@@ -56,8 +57,8 @@
             android:id="@+id/descriptionTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:text="default description"
-            android:background="?attr/cardBackground"
             android:layout_marginTop="2dp"
             android:textSize="13sp"
             android:textColor="@color/text_or_button"/>
